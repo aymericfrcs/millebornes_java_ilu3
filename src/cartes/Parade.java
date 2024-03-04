@@ -1,6 +1,5 @@
 package cartes;
 
-
 public class Parade extends Bataille {
 
 	public Parade(int nombre, Type t) {
@@ -34,5 +33,12 @@ public class Parade extends Bataille {
 			
 		}
 		return "Parade: " + nomCarte;
+	}
+	
+	public boolean equals(Object obj) {
+		if (obj != null && obj.getClass() == getClass()) {
+			Carte c = (Carte)obj;
+			return toString().equals(obj.toString()); //pas sur pour celle là
+		}
 	}
 }

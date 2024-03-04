@@ -11,5 +11,9 @@ public abstract class Carte {
 	public int getNombre() {
 		return nombre;
 	}
+	
+	//ajouter equals sur Carte, Probleme et Parade (je crois)
+	
+	
 
 }

@@ -25,7 +25,7 @@ public class Parade extends Bataille {
 			break;
 			
 		case ACCIDENT :
-			nomCarte = "Réparations";
+			nomCarte = "Rï¿½parations";
 			break;
 	
 		default:
@@ -35,10 +35,13 @@ public class Parade extends Bataille {
 		return "Parade: " + nomCarte;
 	}
 	
+	@Override
 	public boolean equals(Object obj) {
 		if (obj != null && obj.getClass() == getClass()) {
 			Carte c = (Carte)obj;
-			return toString().equals(obj.toString()); //pas sur pour celle là
+			return toString().equals(c.toString()); //pas sur pour celle la
 		}
+		return false;
+			
 	}
 }

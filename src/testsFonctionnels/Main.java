@@ -1,11 +1,13 @@
 package testsFonctionnels;
 
 import java.util.Iterator;
+import java.util.List;
 import java.util.ArrayList;
 
 import cartes.*;
 import cartes.Probleme.Type;
 import jeu.Sabot;
+import utils.Utils;
 
 public class Main {
 	
@@ -74,15 +76,64 @@ public class Main {
 			
 		}
 		
-		public static void main(String[] args) {
+		/*public static void main(String[] args) {
 			JeuDeCartes jeu = new JeuDeCartes();
 			ArrayList<Carte> lCartes = jeu.getListeCartes();
 			
 			for (Carte carte : lCartes) {
+				//System.out.println(carte.toString());
+			}
+			
+			System.out.println(jeu.checkCount()); //true
+			
+			/*Iterator<Carte> iter = lCartes.iterator();
+			iter.next();
+			iter.remove(); //on enlève la deuxième carte de lCartes
+
+			
+			System.out.println(jeu.checkCount()); //false*/
+			
+			//System.out.println(Utils.extraire(lCartes));
+			
+			/*ArrayList<Carte> lCartesMelangee = (ArrayList<Carte>) Utils.melanger(lCartes);
+			
+			for (Carte carte : lCartesMelangee) { //affichage de la liste melangee
 				System.out.println(carte.toString());
 			}
 			
+			System.out.println(Utils.verifierMelange(lCartes, lCartesMelangee));
+			
+		}*/
+		
+		public static void main(String[] args) {
+			List<Integer> l1 = new ArrayList<>();
+			List<Integer> l2 = new ArrayList<>();
+			l1.add(1);
+			l1.add(2);
+			l1.add(3);
+			l1.add(4);
+			Utils.extraire(l1);
+			System.out.println(l1);
+			l2 = Utils.melanger(l1);
+			System.out.println(l2);
+			
+			
+			
+			
+			JeuDeCartes jeu = new JeuDeCartes();
+			List<Carte> listeCarteNonMelangee = jeu.getListeCartes();
+			List<Carte> listeCartes = new ArrayList<>(listeCarteNonMelangee);
+			System.out.println(listeCartes);
+			listeCartes = Utils.melanger(listeCartes);
+			System.out.println(listeCartes);
+			System.out.println("liste mélangée sans erreur ? "
+			+ Utils.verifierMelange(listeCarteNonMelangee, listeCartes));
+			listeCartes = Utils.rassembler2(listeCartes);
+			System.out.println(listeCartes);
+			System.out.println("liste rassemblée sans erreur ? " + Utils.verifierRassemblement(listeCartes));
+
 		}
+	
 	
 
 }

@@ -1,6 +1,7 @@
 package cartes;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import cartes.Probleme.Type;
 
@@ -44,6 +45,20 @@ public class JeuDeCartes {
 
 	public ArrayList<Carte> getListeCartes() {
 		return listeCartes;
+	}
+	
+	public boolean checkCount() {
+		Iterator<Carte> it = listeCartes.iterator();
+		for (int i=0; i<19; i++ ) {
+			for (int j=0; j<typesDeCartes[i].getNombre(); j++) {
+				if (!(typesDeCartes[i].equals(it.next()))) {
+					return false;
+				}
+				
+				
+			}
+		}
+		return true;
 	}
 
 }

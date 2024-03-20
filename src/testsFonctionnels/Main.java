@@ -1,6 +1,7 @@
 package testsFonctionnels;
 
 import java.util.Iterator;
+import java.util.ArrayList;
 
 import cartes.*;
 import cartes.Probleme.Type;
@@ -27,13 +28,13 @@ public class Main {
 		
 		//Iterator<Carte> it = sab.iterator();
 		
-		/* (2.b) while(sab.getNbCartes() > 0) {
+		 /*(2.b) while(sab.getNbCartes() > 0) {
 			Carte c = it.next();
 			System.out.println("Je pioche " + c);
 			it.remove();
 		}*/
-		/*
-		while(sab.getNbCartes() > 0) {
+		
+		/*while(sab.getNbCartes() > 0) {
 			Carte c = it.next();
 			System.out.println("Je pioche " + c);
 			it.remove();
@@ -42,7 +43,7 @@ public class Main {
 		}
 	}*/
 		
-		public static void main(String[] argv) {
+		public static void main_test_tp1_2(String[] argv) {
 			//test methode equals
 			Sabot sab = new Sabot(50);
 			Carte accident = new Attaque(2, Type.ACCIDENT);
@@ -70,6 +71,16 @@ public class Main {
 			Carte c5 = sab.piocher();
 			
 			System.out.println("C4: " + c4.toString() + " = C5: " + c5.toString() + " ? " + c4.equals(c5));
+			
+		}
+		
+		public static void main(String[] args) {
+			JeuDeCartes jeu = new JeuDeCartes();
+			ArrayList<Carte> lCartes = jeu.getListeCartes();
+			
+			for (Carte carte : lCartes) {
+				System.out.println(carte.toString());
+			}
 			
 		}
 	

@@ -61,31 +61,9 @@ public class Utils {
 		return true;
 	}
 	
-	//Probleme ICI
-	//Nvelle approche: copier la liste en entrée et extraire tous les elts en les "triant"
-	public static <T> List<T> rassembler(List<T> liste) {//a tester (je suis pas sur que ca fonctionne bien)
-		List<T> lResult = new ArrayList<>();
-		
-		for (T elem : liste) {
-			if (!lResult.contains(elem)) { //si on a pas déjà traité cet élément ou une occurence antérieure
-				lResult.add(elem);
-				ListIterator<T> it = liste.listIterator(liste.indexOf(elem));
-				it.next();
-				
-				for(int i=0; i<liste.size()-liste.indexOf(elem); i++) {
-					T elem2 = it.next();
-					
-					if (elem2.equals(elem)) {
-						lResult.add(elem2);
-					}
-				}
-			}
-		}
-		
-		return lResult;
-	}
 	
-	public static <T> List<T> rassembler2(List<T> liste) {
+	
+	public static <T> List<T> rassembler(List<T> liste) {
 		List<T> lResult = new ArrayList<>();
 		List<T> lCopie = new ArrayList<>();
 		for (T t : liste) {

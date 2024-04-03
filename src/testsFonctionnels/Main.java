@@ -78,7 +78,7 @@ public class Main {
 		
 		/*public static void main(String[] args) {
 			JeuDeCartes jeu = new JeuDeCartes();
-			ArrayList<Carte> lCartes = jeu.getListeCartes();
+			List<Carte> lCartes = jeu.getListeCartes();
 			
 			for (Carte carte : lCartes) {
 				//System.out.println(carte.toString());
@@ -86,16 +86,16 @@ public class Main {
 			
 			System.out.println(jeu.checkCount()); //true
 			
-			/*Iterator<Carte> iter = lCartes.iterator();
+			Iterator<Carte> iter = lCartes.iterator();
 			iter.next();
 			iter.remove(); //on enlève la deuxième carte de lCartes
 
 			
-			System.out.println(jeu.checkCount()); //false*/
+			System.out.println(jeu.checkCount()); //false
 			
 			//System.out.println(Utils.extraire(lCartes));
 			
-			/*ArrayList<Carte> lCartesMelangee = (ArrayList<Carte>) Utils.melanger(lCartes);
+			ArrayList<Carte> lCartesMelangee = (ArrayList<Carte>) Utils.melanger(lCartes);
 			
 			for (Carte carte : lCartesMelangee) { //affichage de la liste melangee
 				System.out.println(carte.toString());
@@ -128,7 +128,7 @@ public class Main {
 			System.out.println(listeCartes);
 			System.out.println("liste mélangée sans erreur ? "
 			+ Utils.verifierMelange(listeCarteNonMelangee, listeCartes));
-			listeCartes = Utils.rassembler2(listeCartes);
+			listeCartes = Utils.rassembler(listeCartes);
 			System.out.println(listeCartes);
 			System.out.println("liste rassemblée sans erreur ? " + Utils.verifierRassemblement(listeCartes));
 

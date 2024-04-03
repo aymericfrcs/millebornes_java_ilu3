@@ -1,9 +1,12 @@
 package cartes;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
+import java.util.List;
 
 import cartes.Probleme.Type;
+import utils.Utils;
 
 public class JeuDeCartes {
 	private Carte[] typesDeCartes = new Carte[19]; 
@@ -31,7 +34,7 @@ public class JeuDeCartes {
 	typesDeCartes[17] = new Borne(12, 100); 
 	typesDeCartes[18] = new Borne(4, 200); }
 	
-	private ArrayList<Carte> listeCartes;
+	private List<Carte> listeCartes;
 
 	public JeuDeCartes() {
 		listeCartes = new ArrayList<>();
@@ -41,23 +44,25 @@ public class JeuDeCartes {
 				listeCartes.add(typesDeCartes[i]);
 			}
 		}
+		listeCartes = Utils.melanger(listeCartes);
+		if (!this.checkCount()) {
+			System.out.println("Il manque des cartes!!");
+		}
 	}
 
-	public ArrayList<Carte> getListeCartes() {
+	public List<Carte> getListeCartes() {
 		return listeCartes;
 	}
 	
 	public boolean checkCount() {
 		Iterator<Carte> it = listeCartes.iterator();
 		for (int i=0; i<19; i++ ) {
-			for (int j=0; j<typesDeCartes[i].getNombre(); j++) {
-				if (!(typesDeCartes[i].equals(it.next()))) {
-					return false;
-				}
-				
-				
+			if (Collections.frequency(listeCartes, typesDeCartes[i]) != typesDeCartes[i].getNombre()) {
+				return false;
 			}
 		}
+				
+		
 		return true;
 	}
 

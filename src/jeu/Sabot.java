@@ -47,7 +47,7 @@ public class Sabot implements Iterable<Carte>{
 	public Carte piocher() {
 		Iterateur it = new Iterateur();
 		Carte c = it.next();
-		System.out.println("Carte piochée: " + c);
+		System.out.println("Carte piochee: " + c);
 		it.remove();
 		return c;
 	}

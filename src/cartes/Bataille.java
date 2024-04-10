@@ -6,5 +6,5 @@ public abstract class Bataille extends Probleme {
 		super(nombre, t);
 
 	}
-
+	
 }

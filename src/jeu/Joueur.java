@@ -2,8 +2,11 @@ package jeu;
 
 import java.util.List;
 
+import cartes.Bataille;
 import cartes.Borne;
+import cartes.Botte;
 import cartes.Carte;
+import cartes.Limite;
 import main.MainAsListe;
 
 public class Joueur {
@@ -13,22 +16,56 @@ public class Joueur {
 	
 	public Joueur(String nom) {
 		this.nom = nom;
-		
+		zoneJeu = new ZoneDeJeu();
+		main = new MainAsListe();
+	}
+	
+	public String montrerMain() {
+		return "Nombre de cartes: " + String.valueOf(main.nbElem())
+		+ ":\n| " + main.toString() + "\n";
 	}
 	
 	public void donner(Carte c) {
 		main.prendre(c);
 	}
 	
-	public Carte prendreCarte(List<Carte> sabot) {
-		if (sabot.size()==0) {
+	public Carte prendreCarte(Sabot sabot) {
+		if (sabot.estVide()) {
 			return null;
 		}
-		Carte c = sabot.get(0);
-		sabot.remove(0);
+		Carte c = sabot.piocher();
 		this.donner(c);
 		return c;
 	}
+	
+	public boolean deposer(Borne borne) {
+		return zoneJeu.deposer(borne);
+	}
+	
+	public boolean deposer(Limite l) {
+		return zoneJeu.deposer(l);
+	}
+	
+	public boolean deposer(Bataille b) {
+		return zoneJeu.deposer(b);
+	}
+	
+	public boolean deposer(Botte b) {
+		return zoneJeu.deposer(b);
+	}
+	
+	public int donnerKmParcourus() {
+		return zoneJeu.donnerKmParcourus();
+	}
+	
+	public int donnerLimitationVitesse() {
+		return zoneJeu.donnerLimitationVitesse();
+	}
+	
+	public boolean estBloque() {
+		
+	}
+	
 	
 	
 	

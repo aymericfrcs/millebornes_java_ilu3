@@ -105,7 +105,7 @@ public class Main {
 			
 		}*/
 		
-		public static void main(String[] args) {
+		public static void main_tp2(String[] args) {
 			List<Integer> l1 = new ArrayList<>();
 			List<Integer> l2 = new ArrayList<>();
 			l1.add(1);
@@ -134,6 +134,11 @@ public class Main {
 
 		}
 	
+		public static void main(String[] args) {
+			//TestJoueur.testAjoutBornes();
+			TestJoueur.testGetLimite();
+		}
+		
 	
 
 }

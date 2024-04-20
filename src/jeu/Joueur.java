@@ -63,7 +63,7 @@ public class Joueur {
 	}
 	
 	public boolean estBloque() {
-		
+		return zoneJeu.estBloque();
 	}
 	
 	

@@ -136,7 +136,8 @@ public class Main {
 	
 		public static void main(String[] args) {
 			//TestJoueur.testAjoutBornes();
-			TestJoueur.testGetLimite();
+			//TestJoueur.testGetLimite();
+			TestZoneDeJeu.testEstBloque();
 		}
 		
 	
